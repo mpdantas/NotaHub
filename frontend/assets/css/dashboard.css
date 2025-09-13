@@ -1,0 +1,303 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    display: flex; /* Usamos flexbox para organizar o layout */
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: calc(100vh - 50px); /* Ajusta a altura para compensar o rodapé */
+    flex-grow: 1; /* Permite que o container ocupe o espaço restante */
+}
+
+/* Estilos da Sidebar (Menu Lateral) */
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 2em 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.sidebar-header h2 {
+    margin: 0;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-nav li a {
+    display: block;
+    padding: 1em 2em;
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.sidebar-nav li a:hover,
+.sidebar-nav li a.active {
+    background-color: #34495e;
+}
+
+/* Estilos do Conteúdo Principal */
+.main-content {
+    flex-grow: 1;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-header {
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Estilos dos painéis informativos */
+.info-panels {
+    display: flex;
+    gap: 2em;
+    margin-bottom: 2em;
+}
+
+.panel {
+    background-color: #fff;
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+}
+
+.panel h3 {
+    margin-top: 0;
+    color: #555;
+}
+
+.panel p {
+    font-size: 2em;
+    margin: 0;
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Estilos para as seções */
+.data-entry-form,
+.charts-panel,
+.search-panel {
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2em;
+}
+
+/* Estilo do Rodapé */
+.main-footer {
+    padding: 1em;
+    text-align: center;
+    font-size: 0.9em;
+    color: #777;
+    border-top: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+/* Estilos para o formulário */
+.data-entry-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em; /* Espaço entre as linhas do formulário */
+}
+
+.data-entry-form .form-row {
+    display: flex;
+    gap: 1.5em; /* Espaço entre os campos na mesma linha */
+}
+
+.data-entry-form .form-group {
+    flex-grow: 1; /* Faz com que os campos ocupem o mesmo espaço */
+    display: flex;
+    flex-direction: column;
+}
+
+.data-entry-form label {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: #555;
+}
+
+.data-entry-form input,
+.data-entry-form select {
+    padding: 0.8em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%; /* Garante que os campos de texto e select ocupem 100% do seu container */
+}
+
+.data-entry-form button {
+    padding: 0.8em;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    align-self: flex-end; /* Alinha o botão à direita */
+    width: 200px; /* Largura fixa para o botão */
+    transition: background-color 0.3s;
+}
+
+.data-entry-form button:hover {
+    background-color: #218838;
+}
+
+/* Estilos para o painel de pesquisa */
+.search-panel .search-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 1em;
+}
+
+.search-panel .search-container button {
+    width: 200px;
+    height: 42px;
+    padding: 0.8em;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-panel .search-container button:hover {
+    background-color: #2980b9;
+}
+
+.search-results-panel {
+    margin-top: 2em;
+    padding: 1.5em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.search-results-panel h3 {
+    margin-top: 0;
+}
+
+#total-notas {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #28a745;
+}
+
+/* Estilo para garantir que o select no painel de pesquisa tenha a mesma altura */
+.search-panel select,
+.search-panel input {
+    height: 42px;
+    padding: 0.8em;
+    border-radius: 4px; /* Adicionando a borda arredondada */
+}
+
+/* Estilo para os controles do gráfico */
+.chart-controls {
+    margin-bottom: 2em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.chart-controls label {
+    font-weight: bold;
+    color: #555;
+}
+
+.chart-controls select {
+    padding: 0.8em;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    height: 42px; /* Mantém a altura consistente */
+}
+
+/* Regra para esconder seções que não estão ativas */
+.content-section {
+    display: none;
+}
+
+/* Mostra a seção que está ativa */
+.content-section.active {
+    display: block;
+}
+
+/* Estilos para o painel do calendário */
+.calendar-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.calendar-header h3 {
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #555;
+}
+
+.calendar-days-of-week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    width: 100%;
+    gap: 5px;
+}
+
+.calendar-grid span {
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 4px;
+    background-color: #f0f2f5;
+    transition: background-color 0.2s;
+}
+
+.calendar-grid span.current-day {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota Web - Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Nota Web</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#dashboard" class="nav-link active" data-target="dashboard-section">Dashboard</a></li>
+                    <li><a href="#cadastrar" class="nav-link" data-target="cadastrar-nota-section">Cadastrar Nota</a></li>
+                    <li><a href="#pesquisar" class="nav-link" data-target="pesquisar-notas-section">Pesquisar Notas</a></li>
+                    <li><a href="#graficos" class="nav-link" data-target="graficos-section">Gráficos</a></li>
+                    <li><a href="#" class="nav-link">Sair</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1>Painel de Controle</h1>
+            </header>
+            
+            <section class="info-panels">
+                <div class="panel">
+                    <h3>Soma Mensal</h3>
+                    <p id="soma-mensal">R$ 0,00</p>
+                </div>
+                <div class="panel">
+                    <h3>Soma Anual</h3>
+                    <p id="soma-anual">R$ 0,00</p>
+                </div>
+                <div class="panel calendar-panel">
+                    <div class="calendar-header">
+                        <button id="prev-month">&lt;</button>
+                        <h3 id="current-month-year"></h3>
+                        <button id="next-month">&gt;</button>
+                    </div>
+                    <div class="calendar-days-of-week">
+                        <span>Dom</span>
+                        <span>Seg</span>
+                        <span>Ter</span>
+                        <span>Qua</span>
+                        <span>Qui</span>
+                        <span>Sex</span>
+                        <span>Sáb</span>
+                    </div>
+                    <div id="calendar-grid" class="calendar-grid"></div>
+                </div>
+            </section>
+            
+            <div id="content-container">
+                <section class="data-entry-form content-section" id="cadastrar-nota-section">
+                    <h2>Lançamento de Notas Fiscais</h2>
+                    <form id="nota-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="mes">Mês de Referência</label>
+                                <select id="mes" name="mes" required>
+                                    <option value="">Selecione o Mês</option>
+                                    <option value="1">Janeiro</option>
+                                    <option value="2">Fevereiro</option>
+                                    <option value="3">Março</option>
+                                    <option value="4">Abril</option>
+                                    <option value="5">Maio</option>
+                                    <option value="6">Junho</option>
+                                    <option value="7">Julho</option>
+                                    <option value="8">Agosto</option>
+                                    <option value="9">Setembro</option>
+                                    <option value="10">Outubro</option>
+                                    <option value="11">Novembro</option>
+                                    <option value="12">Dezembro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="seguradora">Nome da Seguradora</label>
+                                <select id="seguradora" name="seguradora" required>
+                                    <option value="">Selecione a Seguradora</option>
+                                    <option value="porto_seguro">Porto Seguro</option>
+                                    <option value="azul_seguros">Azul Seguros</option>
+                                    <option value="bradesco_seguros">Bradesco Seguros</option>
+                                    <option value="allianz_seguros">Allianz Seguros</option>
+                                    <option value="tokio_marine">Tokio Marine</option>
+                                    <option value="aig_seguros">AIG Seguros</option>
+                                    <option value="hdi_seguros">HDI Seguros</option>
+                                    <option value="suhai_seguros">Suhai Seguros</option>
+                                    <option value="mapfre_seguros">Mapfre Seguros</option>
+                                    <option value="yeloow_seguros">Yeloow Seguros</option>
+                                </select>
+                            </div>
+                        </div>
+                    
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="valorNota">Valor da Nota Fiscal</label>
+                                <input type="text" id="valorNota" name="valorNota" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="dataEmissao">Data de Emissão do RPS</label>
+                                <input type="date" id="dataEmissao" name="dataEmissao" required>
+                            </div>
+                        </div>
+                    
+                        <div class="form-group">
+                            <label for="numeroRPS">Número de RPS</label>
+                            <input type="text" id="numeroRPS" name="numeroRPS" required>
+                        </div>
+                    
+                        <button type="submit">Cadastrar Nota</button>
+                    </form>
+                </section>
+                
+                <section class="charts-panel content-section" id="graficos-section">
+                    <h2>Gráficos de Evolução</h2>
+                    <div class="chart-controls">
+                        <label for="seguradora-grafico">Selecionar Seguradora:</label>
+                        <select id="seguradora-grafico" name="seguradora-grafico">
+                            <option value="">Todas as Seguradoras</option>
+                            <option value="porto_seguro">Porto Seguro</option>
+                            <option value="azul_seguros">Azul Seguros</option>
+                            <option value="bradesco_seguros">Bradesco Seguros</option>
+                            <option value="allianz_seguros">Allianz Seguros</option>
+                            <option value="tokio_marine">Tokio Marine</option>
+                            <option value="aig_seguros">AIG Seguros</option>
+                            <option value="hdi_seguros">HDI Seguros</option>
+                            <option value="suhai_seguros">Suhai Seguros</option>
+                            <option value="mapfre_seguros">Mapfre Seguros</option>
+                            <option value="yeloow_seguros">Yeloow Seguros</option>
+                        </select>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="evolucao-mensal"></canvas>
+                    </div>
+                </section>
+
+                <section class="search-panel content-section" id="pesquisar-notas-section">
+                    <h2>Pesquisar por Seguradora</h2>
+                    <div class="search-container">
+                        <div class="form-group">
+                            <label for="seguradora-pesquisa">Selecione a Seguradora</label>
+                            <select id="seguradora-pesquisa" name="seguradora-pesquisa">
+                                <option value="">Todas as Seguradoras</option>
+                                <option value="porto_seguro">Porto Seguro</option>
+                                <option value="azul_seguros">Azul Seguros</option>
+                                <option value="bradesco_seguros">Bradesco Seguros</option>
+                                <option value="allianz_seguros">Allianz Seguros</option>
+                                <option value="tokio_marine">Tokio Marine</option>
+                                <option value="aig_seguros">AIG Seguros</option>
+                                <option value="hdi_seguros">HDI Seguros</option>
+                                <option value="suhai_seguros">Suhai Seguros</option>
+                                <option value="mapfre_seguros">Mapfre Seguros</option>
+                                <option value="yeloow_seguros">Yeloow Seguros</option>
+                            </select>
+                        </div>
+                        <button id="search-button">Pesquisar</button>
+                    </div>
+                
+                    <div class="search-results-panel">
+                        <h3>Resultados da Pesquisa</h3>
+                        <p>Total de Notas Emitidas: <span id="total-notas">R$ 0,00</span></p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <footer class="main-footer">
+        <p>Todos os direitos reservados &copy; <span id="current-year"></span> - Desenvolvido por MD Tech Engenharia</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-masker@1.1.1/build/vanilla-masker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="../assets/js/notaMask.js"></script>
+    <script src="../assets/js/charts.js"></script>
+    <script src="../assets/js/search.js"></script>
+    <script src="../assets/js/summary.js"></script>
+    <script src="../assets/js/calendar.js"></script>
+    <script src="../assets/js/navigation.js"></script>
+    <script src="../assets/js/footer.js"></script>
+</body>
+</html>
