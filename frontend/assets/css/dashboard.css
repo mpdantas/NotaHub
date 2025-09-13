@@ -301,3 +301,28 @@ body {
     color: #fff;
     font-weight: bold;
 }
+
+/* Estilo para a imagem do logo na sidebar */
+.logo-sidebar {
+    max-width: 100px; /* Define a largura máxima para o logo */
+    height: auto;     /* Mantém a proporção da imagem */
+    display: block;   /* Remove qualquer espaço extra abaixo da imagem */
+    margin: 0 auto;   /* Centraliza a imagem horizontalmente */
+    padding: 10px;    /* Adiciona um pouco de espaço ao redor */
+}
+
+/* Estilo para a caixa de aviso */
+.alert-message {
+    background-color: #fff3cd; /* Amarelo claro */
+    border: 1px solid #ffeeba;
+    border-radius: 4px;
+    padding: 1em;
+    margin-bottom: 2em;
+    text-align: center;
+    color: #856404; /* Cor do texto */
+    font-weight: bold;
+}
+
+.alert-message p {
+    margin: 0;
+}

@@ -10,14 +10,14 @@
     <div class="dashboard-container">
         <aside class="sidebar">
             <div class="sidebar-header">
-                <h2>Nota Web</h2>
+                <img src="../assets/img/logo.png" alt="Logo MD Tech" class="logo-sidebar">
             </div>
             <nav class="sidebar-nav">
                 <ul>
-                    <li><a href="#dashboard" class="nav-link active" data-target="dashboard-section">Dashboard</a></li>
-                    <li><a href="#cadastrar" class="nav-link" data-target="cadastrar-nota-section">Cadastrar Nota</a></li>
-                    <li><a href="#pesquisar" class="nav-link" data-target="pesquisar-notas-section">Pesquisar Notas</a></li>
-                    <li><a href="#graficos" class="nav-link" data-target="graficos-section">Gráficos</a></li>
+                    <li><a href="#dashboard" class="nav-link active" data-target="dashboard-content">Dashboard</a></li>
+                    <li><a href="#cadastrar" class="nav-link" data-target="cadastrar-nota-content">Cadastrar Nota</a></li>
+                    <li><a href="#pesquisar" class="nav-link" data-target="pesquisar-notas-content">Pesquisar Notas</a></li>
+                    <li><a href="#graficos" class="nav-link" data-target="graficos-content">Gráficos</a></li>
                     <li><a href="#" class="nav-link">Sair</a></li>
                 </ul>
             </nav>
@@ -57,10 +57,17 @@
             </section>
             
             <div id="content-container">
-                <section class="data-entry-form content-section" id="cadastrar-nota-section">
+                <section class="data-entry-form content-section active" id="cadastrar-nota-content">
                     <h2>Lançamento de Notas Fiscais</h2>
+                    <div class="alert-message">
+                        <p>A emissão das notas deve ser feita até o dia 05 de cada mês.</p>
+                    </div>
                     <form id="nota-form">
                         <div class="form-row">
+                            <div class="form-group">
+                                <label for="ano">Ano de Referência</label>
+                                <select id="ano" name="ano" required></select>
+                            </div>
                             <div class="form-group">
                                 <label for="mes">Mês de Referência</label>
                                 <select id="mes" name="mes" required>
@@ -117,7 +124,7 @@
                     </form>
                 </section>
                 
-                <section class="charts-panel content-section" id="graficos-section">
+                <section class="charts-panel content-section" id="graficos-content">
                     <h2>Gráficos de Evolução</h2>
                     <div class="chart-controls">
                         <label for="seguradora-grafico">Selecionar Seguradora:</label>
@@ -140,7 +147,7 @@
                     </div>
                 </section>
 
-                <section class="search-panel content-section" id="pesquisar-notas-section">
+                <section class="search-panel content-section" id="pesquisar-notas-content">
                     <h2>Pesquisar por Seguradora</h2>
                     <div class="search-container">
                         <div class="form-group">
@@ -180,10 +187,12 @@
 
     <script src="../assets/js/notaMask.js"></script>
     <script src="../assets/js/charts.js"></script>
+    <script src="../assets/js/growthChart.js"></script>
     <script src="../assets/js/search.js"></script>
     <script src="../assets/js/summary.js"></script>
     <script src="../assets/js/calendar.js"></script>
     <script src="../assets/js/navigation.js"></script>
     <script src="../assets/js/footer.js"></script>
+    <script src="../assets/js/yearDropdown.js"></script>
 </body>
 </html>
